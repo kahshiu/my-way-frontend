@@ -1,14 +1,14 @@
 <script>
   import {writable} from "svelte/store";
-  import Table from "$lib/components/MyTable.svelte";
-  import Textbox from "$lib/components/MyTextbox.svelte";
-  import TextDt from "$lib/components/MyTextDt.svelte";
   import Button from "$lib/components/button.svelte";
-  import {format} from "date-fns";
-  import {createForm, getValues, getMessages} from "$lib/utils/form.js";
 
+  import Table from "$lib/components/MyTable.svelte";
   import Form from "$lib/components/MyForm.svelte";
   import Text from "$lib/components/MyController.svelte";
+  import Textbox from "$lib/components/MyTextbox.svelte";
+  import TextDt from "$lib/components/MyTextDt.svelte";
+
+  import {format} from "date-fns";
 
   let dt = new Date();
   let dtFormatted = format(dt, 'dd/MM/yyyy');
@@ -25,34 +25,16 @@
     fieldValue: "hello123",
   }
 
-///// 
-
-// const {subscribe, updateField} = formStore
-// 
-// $: store = JSON.stringify($formStore);
-// $: values = JSON.stringify(getValues($formStore));
-// $: messages = JSON.stringify(getMessages($formStore));
-// 
-// console.log("test")
-// const update = ()=>{
-//   console.log("click");
-//   updateField("test", Math.random(), "hello");
-//   updateField("test2", Math.random(), "error2");
-//   updateField("test3", Math.random(), "");
-// }
-
-///// 
-
 let showinput = true;
 console.log("tracing from index");
-let temp = {a: new Date().toISOString(), b:2}
+let temp = {a: {a:new Date().toISOString()}, b:2}
 
 </script>
 
 <h1>My Way</h1>
 form1
 <Form name="a" initialData={temp}>
-  <Text name="a|a" />
+  <Text name="a|a.a" />
 </Form>
 <hr />
 

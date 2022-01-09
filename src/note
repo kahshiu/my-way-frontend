@@ -7,4 +7,5 @@ child dispatch event and parent listen
 ---------------
 link form data to text field
 link select by form key
-validators
+validators - assign/ call validator within component
+
